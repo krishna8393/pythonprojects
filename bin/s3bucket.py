@@ -13,8 +13,7 @@ def list_all_buckets():
     for bucket in response['Buckets']:
         print(f'  {bucket["Name"]}')
 
+
+
 if __name__ == "__main__":
-    print('programname', sys.argv[0])
-    instance_ids = sys.argv[1].split(',')
-    print('instance_ids', instance_ids)
-    list_all_buckets()
+#     list_all_buckets()
