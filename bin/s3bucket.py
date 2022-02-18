@@ -5,6 +5,8 @@ import sys
 import os
 
 accountid = os.getenv("accountid")
+region = os.getenv("region")
+trg_accountid = os.getenv("trg_accountid")
 
 def list_all_buckets():
     # Retrieve the list of existing buckets
