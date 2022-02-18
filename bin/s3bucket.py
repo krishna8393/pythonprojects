@@ -19,4 +19,4 @@ def list_all_buckets():
 
 if __name__ == "__main__":
 #     list_all_buckets()
-    print('accountid', accountid)
+    print('accountid:', accountid)
