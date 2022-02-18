@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'rolename', defaultValue: 'jenkins_slave', description: 'Workspace/environment file to use for deployment')
+        string(name: 'rolename', defaultValue: 'jenkins_role', description: 'Workspace/environment file to use for deployment')
         string(name: 'accountid', defaultValue: '941039889978', description: 'accountid variable to pass to Terraform')
         string(name: 'region', defaultValue: 'ap-south-1', description: 'region variable to pass to Terraform')
     }
