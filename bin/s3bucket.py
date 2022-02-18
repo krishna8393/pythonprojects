@@ -19,6 +19,7 @@ def list_all_buckets():
         print(f'  {bucket["Name"]}')
 
 def amisharing():
+    ec2_client = boto3.client('ec2')
     response = ec2_client.describe_images(Owners=['self'])
     print(response)
 #     try:
@@ -36,7 +37,6 @@ def amisharing():
 #         print(e)
 
 if __name__ == "__main__":
-    ec2_client = boto3.client('ec2')
 #     list_all_buckets()
     print('accountid:', accountid)
     print('region:', region)
