@@ -15,4 +15,6 @@ def list_all_buckets():
 
 if __name__ == "__main__":
     print('programname', sys.argv[0])
+    instance_ids = sys.argv[1].split(',')
+    print('instance_ids', instance_ids)
     list_all_buckets()
