@@ -21,3 +21,5 @@ def list_all_buckets():
 if __name__ == "__main__":
 #     list_all_buckets()
     print('accountid:', accountid)
+    print('region:', region)
+    print('target account id:', trg_accountid)
