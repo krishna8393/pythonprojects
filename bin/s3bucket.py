@@ -11,4 +11,5 @@ def list_all_buckets():
         print(f'  {bucket["Name"]}')
 
 if __name__ == "__main__":
+    print('programname', sys.argv[0])
     list_all_buckets()
