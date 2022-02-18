@@ -7,6 +7,7 @@ import os
 accountid = os.getenv("accountid")
 region = os.getenv("region")
 trg_accountid = os.getenv("trg_accountid")
+ec2_client = boto3.client('ec2')
 
 def list_all_buckets():
     # Retrieve the list of existing buckets
@@ -19,7 +20,6 @@ def list_all_buckets():
         print(f'  {bucket["Name"]}')
 
 def amisharing():
-    ec2_client = boto3.client('ec2')
     response = ec2_client.describe_images(Owners=['self'])
     print(response)
 #     try:
