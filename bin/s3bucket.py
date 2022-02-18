@@ -2,6 +2,7 @@ import boto3
 import json
 import time
 import sys
+import os
 
 accountid = os.getenv("accountid")
 
