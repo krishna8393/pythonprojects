@@ -14,12 +14,12 @@ pipeline {
        }
         stage('Connecting To Aws') {
             steps {
-                sh(
-                    script: "python3 ${env.WORKSPACE}/bin/s3bucket.py '${params.JOB_NAME}' 2>&1",
-                    returnStdout: true
-                )
-                //sh "chmod +x ${env.WORKSPACE}/config.sh"
-                //sh "${env.WORKSPACE}/config.sh '${params.accountid}' '${params.rolename}' '${params.region}'"
+                //sh(
+                  //  script: "python3 ${env.WORKSPACE}/bin/s3bucket.py '${params.JOB_NAME}' 2>&1",
+                    //returnStdout: true
+                //)
+                sh "chmod +x ${env.WORKSPACE}/config.sh"
+                sh "${env.WORKSPACE}/config.sh '${params.accountid}' '${params.rolename}' '${params.region}'"
                 // sh "aws sts get-caller-identity"
             }
         }
