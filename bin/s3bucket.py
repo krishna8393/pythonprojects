@@ -18,10 +18,26 @@ def list_all_buckets():
     for bucket in response['Buckets']:
         print(f'  {bucket["Name"]}')
 
-
+def amisharing():
+    response = ec2_client.describe_images(Owners=['self'])
+    print(response)
+#     try:
+#         for ami in response['Images']:
+#             for imageName in ami_list:
+#                 if(imageName == ami['Name']):
+#                     response2 = ec2_client.modify_image_attribute(
+#                         Attribute='launchPermission',
+#                         ImageId=ami['ImageId'],
+#                         OperationType='add',
+#                         UserIds=consumer_account_id
+#                     )
+#                     print(response2)
+#     except Exception as e:
+#         print(e)
 
 if __name__ == "__main__":
 #     list_all_buckets()
     print('accountid:', accountid)
     print('region:', region)
     print('target account id:', trg_accountid)
+    amisharing()
