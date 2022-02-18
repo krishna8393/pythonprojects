@@ -7,7 +7,7 @@ aws sts assume-role --role-arn arn:aws:iam::$accountid:role/$rolename --role-ses
 )
 )
 
-python3 /var/lib/jenkins/workspace/terraform/bin/s3bucket.py
+python3 /var/lib/jenkins/workspace/bin/s3bucket.py
 
 # terraform init
 # terraform plan
