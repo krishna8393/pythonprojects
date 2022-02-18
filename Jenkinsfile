@@ -18,8 +18,8 @@ pipeline {
                   //  script: "python3 ${env.WORKSPACE}/bin/s3bucket.py '${params.JOB_NAME}' 2>&1",
                     //returnStdout: true
                 //)
-                sh "chmod +x ${env.WORKSPACE}/config.sh"
-                sh "${env.WORKSPACE}/config.sh '${params.accountid}' '${params.rolename}' '${params.region}'"
+                sh "chmod +x ${env.WORKSPACE}/shell/config.sh"
+                sh "${env.WORKSPACE}/shell/config.sh '${params.accountid}' '${params.rolename}' '${params.region}'"
                 // sh "aws sts get-caller-identity"
             }
         }
