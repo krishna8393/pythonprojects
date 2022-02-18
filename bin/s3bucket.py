@@ -19,7 +19,7 @@ def list_all_buckets():
         print(f'  {bucket["Name"]}')
 
 def amisharing():
-    client = boto3.client('ec2' region_name=region)
+    client = boto3.client('ec2', region_name=region)
     response = client.describe_images(Owners=['self'])
     print(response)
 #     try:
