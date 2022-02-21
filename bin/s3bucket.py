@@ -33,7 +33,7 @@ def amisharing():
                     Attribute='launchPermission',
                     ImageId=ami['ImageId'],
                     OperationType='add',
-                    UserIds=trg_accountid
+                    UserId=trg_accountid
                 )
                 print(response2)
     except Exception as e:
