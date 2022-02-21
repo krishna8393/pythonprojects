@@ -26,17 +26,17 @@ def amisharing():
     try:
         for ami in response['Images']:
             print("ami_id:", ami['ImageId'])
-            for imageName in ami_list:
-                print(imageName)
-                if(imageName == ami['Name']):
-                    print("malik")
-                    response2 = client.modify_image_attribute(
-                        Attribute='launchPermission',
-                        ImageId=ami['ImageId'],
-                        OperationType='add',
-                        UserIds=trg_accountid
-                    )
-                    print(response2)
+#             for imageName in ami_list:
+            print(imageName)
+            if(imageName == ami['Name']):
+                print("malik")
+                response2 = client.modify_image_attribute(
+                    Attribute='launchPermission',
+                    ImageId=ami['ImageId'],
+                    OperationType='add',
+                    UserIds=trg_accountid
+                )
+                print(response2)
     except Exception as e:
         print(e)
 
