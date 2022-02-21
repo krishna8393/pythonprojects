@@ -22,7 +22,7 @@ def list_all_buckets():
 def amisharing():
     client = boto3.client('ec2', region_name=region)
     response = client.describe_images(Owners=['self'])
-    print(response)
+#     print(response)
     try:
         for ami in response['Images']:
             for imageName in ami_list:
@@ -42,4 +42,5 @@ if __name__ == "__main__":
     print('accountid:', accountid)
     print('region:', region)
     print('target account id:', trg_accountid)
+    print('AMI id:', ami_list)
     amisharing()
