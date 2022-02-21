@@ -25,7 +25,7 @@ def amisharing():
 #     print(response)
     try:
         for ami in response['Images']:
-            print("ami_id": ami['ImageId'])
+            print("ami_id:" ami['ImageId'])
             for imageName in ami_list:
                 print(imageName)
                 if(imageName == ami['Name']):
