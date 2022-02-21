@@ -6,7 +6,7 @@ pipeline {
         string(name: 'accountid', defaultValue: '941039889978', description: 'accountid variable to pass to Terraform')
         string(name: 'region', defaultValue: 'us-east-1', description: 'region variable to pass to Terraform')
         string(name: 'trg_accountid', defaultValue: '220934115347', description: 'ami sharing target account')
-        string(name: 'ami_name', defaultValue: 'AIO_Test01_Veera', description: 'ami sharing target account')
+        list(name: 'ami_name', defaultValue: ['AIO_Test01_Veera'], description: 'ami sharing target account')
     }
     stages {
         stage('Cloning Git') {
