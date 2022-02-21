@@ -25,7 +25,9 @@ def amisharing():
 #     print(response)
     try:
         for ami in response['Images']:
+            print(ami)
             for imageName in ami_list:
+                print(imageName)
                 if(imageName == ami['Name']):
                     response2 = ec2_client.modify_image_attribute(
                         Attribute='launchPermission',
