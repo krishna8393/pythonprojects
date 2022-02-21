@@ -29,6 +29,7 @@ def amisharing():
             for imageName in ami_list:
                 print(imageName)
                 if(imageName == ami['Name']):
+                    print("malik")
                     response2 = client.modify_image_attribute(
                         Attribute='launchPermission',
                         ImageId=ami['ImageId'],
