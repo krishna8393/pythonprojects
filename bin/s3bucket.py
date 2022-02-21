@@ -27,7 +27,6 @@ def amisharing():
         for ami in response['Images']:
             print("ami_id:", ami['ImageId'])
 #             for imageName in ami_list:
-            print(imageName)
             if(ami_list == ami['Name']):
                 print("malik")
                 response2 = client.modify_image_attribute(
