@@ -7,6 +7,7 @@ import os
 accountid = os.getenv("accountid")
 region = os.getenv("region")
 trg_accountid = os.getenv("trg_accountid")
+ami_list = os.getenv("ami_name")
 
 def list_all_buckets():
     # Retrieve the list of existing buckets
@@ -22,19 +23,19 @@ def amisharing():
     client = boto3.client('ec2', region_name=region)
     response = client.describe_images(Owners=['self'])
     print(response)
-#     try:
-#         for ami in response['Images']:
-#             for imageName in ami_list:
-#                 if(imageName == ami['Name']):
-#                     response2 = ec2_client.modify_image_attribute(
-#                         Attribute='launchPermission',
-#                         ImageId=ami['ImageId'],
-#                         OperationType='add',
-#                         UserIds=consumer_account_id
-#                     )
-#                     print(response2)
-#     except Exception as e:
-#         print(e)
+    try:
+        for ami in response['Images']:
+            for imageName in ami_list:
+                if(imageName == ami['Name']):
+                    response2 = ec2_client.modify_image_attribute(
+                        Attribute='launchPermission',
+                        ImageId=ami['ImageId'],
+                        OperationType='add',
+                        UserIds=accountid
+                    )
+                    print(response2)
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
 #     list_all_buckets()
