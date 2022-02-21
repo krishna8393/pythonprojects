@@ -7,7 +7,7 @@ import os
 accountid = os.getenv("accountid")
 region = os.getenv("region")
 trg_accountid = []
-trg_accountid = apend.os.getenv("trg_accountid")
+trg_accountid.apend(os.getenv("trg_accountid"))
 ami_list = os.getenv("ami_name")
 
 def list_all_buckets():
